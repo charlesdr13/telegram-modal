@@ -27,8 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            // Assuming the conversation is in a field named "Conversation"
+            // DEBUGGING STEP 1: Log the entire data object we received from n8n
+            console.log('Data received from n8n:', data);
+
             const conversation = data[0]?.Conversation || 'No conversation found.';
+
+            // DEBUGGING STEP 2: Log the conversation variable we extracted
+            console.log('Extracted conversation:', conversation);
+            
             convoTextElement.textContent = conversation;
 
             // Hide loader and show content
