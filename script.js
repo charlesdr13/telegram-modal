@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             // Assuming the conversation is in a field named "Conversation"
-            const conversation = data[0]?.json?.fields?.Conversation || 'No conversation found.';
+            const conversation = data[0]?.Conversation || 'No conversation found.';
             convoTextElement.textContent = conversation;
 
             // Hide loader and show content
